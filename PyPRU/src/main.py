@@ -5,5 +5,9 @@ Created on Apr 17, 2018
 '''
 
 
-print("Hello World!")
-print("Ciao, Emilio!")
+import tensorflow as tf
+
+hello = tf.constant("Hello, TensorFlow!")
+sess = tf.Session()
+
+print(sess.run(hello).decode())
