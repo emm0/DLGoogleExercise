@@ -22,13 +22,13 @@ import time
 
 import tensorflow as tf
 
-from . import attention_model
-from . import gnmt_model
-from . import inference
-from . import model as nmt_model
-from . import model_helper
-from .utils import misc_utils as utils
-from .utils import nmt_utils
+import attention_model
+import gnmt_model
+import inference
+import model as nmt_model
+import model_helper
+from utils import misc_utils as utils
+from utils import nmt_utils
 
 utils.check_tensorflow_version()
 
@@ -525,7 +525,7 @@ def _sample_decode(model, global_step, sess, hparams, iterator, src_data,
       subword_option=hparams.subword_option)
   utils.print_out("    src: %s" % src_data[decode_id])
   utils.print_out("    ref: %s" % tgt_data[decode_id])
-  utils.print_out(b"    nmt: " + translation)
+  utils.print_out("    nmt: %s" % translation.decode())
 
   # Summary
   if attention_summary is not None:
