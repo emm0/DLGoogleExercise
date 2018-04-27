@@ -27,7 +27,6 @@ from . import inference
 from . import nmt
 from . import train
 
-
 def _update_flags(flags, test_name):
   """Update flags for basic training."""
   flags.num_train_steps = 100
